@@ -42,6 +42,7 @@
 <h1> <%= now %></h1>
 <a href="./ex01basic.html"> ex01basic 이동 </a>
 
+<h2> 자바 코드 안에 h1 태그 생성하는 것 </h2>
 
 <%
 	for(int i =0; i < arr.length; i+=1){
@@ -52,8 +53,12 @@
 
 <hr>
 
+<h2> 자바 코드 와 html 태그 분리 해서 사용 </h2>
+
 <% 	for(int i =0; i < arr.length; i+=1){ %>
+
 <h1> <%= arr[i] %> </h1>
+
 <%} %>
 
 </body>
