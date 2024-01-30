@@ -13,7 +13,7 @@
 
 %>
 
-<script type="text/javascript">
+<script>
    alert("로그아웃 성공 ");
    location.href="index.jsp";
 </script>

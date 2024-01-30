@@ -6,13 +6,7 @@
   String msg ="";
     %>
     
- <script>
-function printMsg( url ,msg) {
-	alert(msg);
-	location.href=url;
-}
 
-</script>
     
 <!DOCTYPE html>
 <html>
@@ -26,7 +20,7 @@ function printMsg( url ,msg) {
 
 <h1><%=msg %></h1>
 <% if(pass){ %>
-
+printMsg( 'index.jsp' ,"로그인 성공");
 <script>
 </script>
 
@@ -34,6 +28,14 @@ function printMsg( url ,msg) {
 <script>
 </script>
 <%} %>
+
 </body>
 </html>
 
+ <script>
+function printMsg( url ,msg) {
+	alert(msg);
+	location.href=url;
+}
+
+</script>
