@@ -47,7 +47,7 @@ printMsg("<%=id%>" ,'<%=pw%>','<%=name%>',"index.jsp" ,"로그인성공" );
 
 <%}else{ %>
 <script>
-printMsg('<%=id%>' ,"<%=pw%>","<%=name%>","index.jsp" ,"로그인성공" );
+printMsg('<%=id%>' ,"<%=pw%>","<%=name%>","login.jsp" ,"로그인실패" );
 </script>
 <%} %>
 </body>

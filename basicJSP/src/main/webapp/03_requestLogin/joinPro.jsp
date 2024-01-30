@@ -12,7 +12,14 @@
  String name = request.getParameter("name");
  String id = request.getParameter("id");
  String pw = request.getParameter("pw");
-
+ 
+ String[] member = {name, id, pw};
+ request.setAttribute("member", member);
+ 
+ // 자바에서 페이지 이동 
+ RequestDispatcher dis = request.getRequestDispatcher("login.jsp");
+ dis.forward(request, response);
+ 
 %>
 <h1> <%=name %></h1>
 <h1> <%=id %></h1>

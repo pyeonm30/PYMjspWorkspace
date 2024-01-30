@@ -1,10 +1,14 @@
+<%@page import="java.util.Arrays"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
 <%
-String name = request.getParameter("name");
-String id = request.getParameter("id");
-String pw = request.getParameter("pw");
+
+String[] member = (String[])request.getAttribute("member");
+System.out.println(request.getAttribute("member"));
+String name =member[0]; //request.getParameter("name");
+String id =member[1]; //request.getParameter("id");
+String pw =member[2]; //request.getParameter("pw");
 %>
 <!DOCTYPE html>
 <html>
@@ -16,6 +20,7 @@ String pw = request.getParameter("pw");
 <h1> <%=name %></h1>
 <h1> <%=id %></h1>
 <h1> <%=pw %></h1>
+<h1> <%=Arrays.toString(member) %></h1>
 
 <h1> 로그인 </h1>
 <form method="post" action="loginPro.jsp">
