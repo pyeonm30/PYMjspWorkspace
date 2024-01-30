@@ -27,9 +27,13 @@ function movePage(){
 	location.href="ex04_form03.jsp";
 }
 function goNextPage(){
+	let name1 = document.querySelector("#num1").name;
+	let name2 = document.querySelector("#num2").name;
 	let value1 = document.querySelector("#num1").value;
 	let value2 = document.querySelector("#num2").value;
-	location.href="ex08_from06pro.jsp?num1="+value1+"&num2="+value2;
+	console.log(name1 , name2, value1, value2);
+	let url = `ex08_from06pro.jsp?${name1}=${value1}&${name2}=${value2}`;
+	location.href= url;
 }
   
 </script>
