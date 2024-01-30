@@ -1,3 +1,4 @@
+<%@page import="java.util.ArrayList"%>
 <%@page import="java.util.Arrays"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -9,6 +10,20 @@
 <title>Insert title here</title>
 </head>
 <body>
+<% 
+String name= "";
+ArrayList user = new ArrayList();
+
+if(session.getAttribute("name")!= null && session.getAttribute("user")!= null){
+  name = (String)session.getAttribute("name");
+  user = (ArrayList)session.getAttribute("user");
+  %>
+
+  <h1> <%=name %></h1>
+  <h1> <%=user.get(0) %></h1>
+  <h1> <%=user.get(1) %></h1>
+  
+<% } %>
 
 
 <h1> 로그인 </h1>
