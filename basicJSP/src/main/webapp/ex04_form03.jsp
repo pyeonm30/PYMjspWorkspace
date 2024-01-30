@@ -26,14 +26,14 @@
 */
 
 %>
-<form action="ex05_form04.jsp" method="post">
+<form action="ex06_from05.jsp" method="get">
 	<table border="1">
 	<tr>
 		<td>첫번째 수 : </td>
 		<td> <input type="text" name="su1" /></td>
 	</tr>
 	<tr>
-	<td>첫번째 수 : </td>
+	<td>두번째 수 : </td>
 	<td> <input type="text" name="su2" /></td>
 	</tr>
 		<tr>
