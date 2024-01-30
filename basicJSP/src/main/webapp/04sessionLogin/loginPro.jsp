@@ -7,9 +7,9 @@
     %>
     
  <script>
-function printMsg(id, pw , name , url ,msg) {
+function printMsg( url ,msg) {
 	alert(msg);
-	location.href=url +"?id="+id+"&pw="+pw+"&name="+name;
+	location.href=url;
 }
 
 </script>
