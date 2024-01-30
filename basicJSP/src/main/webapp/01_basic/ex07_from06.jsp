@@ -31,7 +31,6 @@ function goNextPage(){
 	let name2 = document.querySelector("#num2").name;
 	let value1 = document.querySelector("#num1").value;
 	let value2 = document.querySelector("#num2").value;
-	console.log(name1 , name2, value1, value2);
 	let url = `ex08_from06pro.jsp?${name1}=${value1}&${name2}=${value2}`;
 	location.href= url;
 }
