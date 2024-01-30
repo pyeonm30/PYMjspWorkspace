@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<%
+ int grade = 4;
+
+%>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,11 +15,11 @@
 	<div align="center">
 		<h2>학번, 이름, 학년, 선택과목을 입력하는 폼</h2>
 		    
-	    <form method="post" action="ex07_mutitypeFormPro.jsp">
+	    <form method="post" action="ex10_from07Pro.jsp">
 	    	<table border="1">
 	    	<tr>
 	    		<td>학번</td>
-	    		<td><input type="text" name="num"></td>
+	    		<td><input type="number" name="num" value="test"></td>
 	        </tr>
 	        <tr>
 	         	<td>이름</td>
@@ -23,10 +28,10 @@
 	        <tr>
 	        	<td>학년</td>
 	        	<td>
-		        	 <input type="radio" name="grade" value="1" checked>1학년&nbsp;
-			         <input type="radio" name="grade" value="2">2학년&nbsp;
-			         <input type="radio" name="grade" value="3">3학년&nbsp;
-			         <input type="radio" name="grade" value="4">4학년
+		        	 <input type="radio" name="grade" value="1" <%if(grade == 1){%> checked  <%} %> >1학년&nbsp;
+			         <input type="radio" name="grade" value="2" <%if(grade == 2){%> checked  <%} %>>2학년&nbsp;
+			         <input type="radio" name="grade" value="3" <%if(grade == 3){%> checked  <%} %>>3학년&nbsp;
+			         <input type="radio" name="grade" value="4" <%if(grade == 4){%> checked  <%} %> >4학년
 	        	</td>
 	        </tr>
 	        <tr>
