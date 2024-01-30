@@ -1,13 +1,6 @@
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
 <%
  
  String name = request.getParameter("name");
@@ -21,12 +14,14 @@
  session.setAttribute("user", list);
  // 세션은 보통 30분으로 디폴트로 서버안에 저장되어있음 
  //session.setMaxInactiveInterval(5); 5초동안만 유지 
- 
- 
+
 %>
+<script>
+alert("회원가입완료!");
+location.href="login.jsp";
+</script>
 
-
-<a href="login.jsp"> 로그인하러가기 </a>
-
-</body>
-</html>
+<%
+// 서버에서 페이지이동 
+// response.sendRedirect("login.jsp");
+%>

@@ -10,8 +10,14 @@
 </head>
 <body>
 <h1> 홈화면 </h1>
+<%if(session.getAttribute("log")==null){ %>
 <a href="join.jsp">회원가입</a>
 <a href="login.jsp">로그인</a>
 
+<%}else { %>
+<h1> <%=session.getAttribute("name") %> 님 환영합니다</h1>
+<a href="logout.jsp">로그아웃</a>
+
+<%} %>
 </body>
 </html>

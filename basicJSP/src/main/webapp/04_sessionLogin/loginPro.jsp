@@ -1,41 +1,35 @@
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-  <%
-
-  boolean pass = false;
-  String msg ="";
-    %>
-    
-
-    
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-
-
-
-<h1><%=msg %></h1>
-<% if(pass){ %>
-printMsg( 'index.jsp' ,"로그인 성공");
-<script>
-</script>
-
-<%}else{ %>
-<script>
-</script>
-<%} %>
-
-</body>
-</html>
-
  <script>
 function printMsg( url ,msg) {
 	alert(msg);
 	location.href=url;
 }
-
 </script>
+
+  <%
+  String inputId = request.getParameter("inputId");
+  String inputPw = request.getParameter("inputPw");
+  ArrayList<String> list = (ArrayList)session.getAttribute("user");
+  boolean pass = false;
+  String dbId = list.get(0);
+  String dbPw = list.get(1);
+  if(dbId.equals(inputId)&&dbPw.equals(inputPw)){
+	  session.setAttribute("log", dbId);
+	  pass = true;
+  }
+   %>
+
+<% if(pass){ %>
+<script>
+printMsg( 'index.jsp' ,"로그인 성공");
+</script>
+
+<%}else{ %>
+<script>
+printMsg( 'login.jsp' ,"로그인 실패");
+</script>
+<%} %>
+
+

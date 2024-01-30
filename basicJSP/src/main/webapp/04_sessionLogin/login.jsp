@@ -10,20 +10,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<% 
-String name= "";
-ArrayList user = new ArrayList();
-
-if(session.getAttribute("name")!= null && session.getAttribute("user")!= null){
-  name = (String)session.getAttribute("name");
-  user = (ArrayList)session.getAttribute("user");
-  %>
-
-  <h1> <%=name %></h1>
-  <h1> <%=user.get(0) %></h1>
-  <h1> <%=user.get(1) %></h1>
-  
-<% } %>
 
 
 <h1> 로그인 </h1>
