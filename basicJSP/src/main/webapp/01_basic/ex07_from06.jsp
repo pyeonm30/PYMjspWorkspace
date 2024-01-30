@@ -18,6 +18,8 @@
    	<button> 버튼2</button> <!-- form 태그 안에 있는 버튼은 <input type="submit"/> 와 동일 -->
    </form>
     <button onclick="goNextPage()"> 전송2</button> <!-- 	form 태그 밖에 있는 버튼은 <input type="button"/> 과 동일-->
+
+   <a href="ex08_from06pro.jsp?num1=<%=10%>&num2=<%=20 %>"> form06pro로 이동 </a>
 </body>
 </html>
 <script>
