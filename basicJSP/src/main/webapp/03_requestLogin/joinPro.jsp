@@ -7,6 +7,18 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%
+ 
+ String name = request.getParameter("name");
+ String id = request.getParameter("id");
+ String pw = request.getParameter("pw");
+
+%>
+<h1> <%=name %></h1>
+<h1> <%=id %></h1>
+<h1> <%=pw %></h1>
+
+<a href="login.jsp?name=<%=name%>&id=<%=id%>&pw=<%=pw%>"> 로그인하러가기 </a>
 
 </body>
 </html>
