@@ -6,7 +6,7 @@
     Random rd = new Random();
      String com = request.getParameter("com");
      int rNum = 0;
-     if(com ==""){
+     if(com =="" || com == null){
       rNum = rd.nextInt(100)+1;
      }else{
     	 rNum = Integer.parseInt(request.getParameter("com"));
@@ -23,6 +23,7 @@
 <body>
 <p> 치트키 <%= rNum %></p>
 <form action="updownGameplayPro.jsp">
+ <input type="number" name="me" required min="1" max="100"/>
  <input type="hidden" name="com" value=<%= rNum %> />
  <button> 전송 </button>
 </form>

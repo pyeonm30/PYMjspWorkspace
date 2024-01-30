@@ -8,8 +8,5 @@
 </head>
 <body>
 
-<h1> 업다운 게임 </h1>
-<a href="updownGameplay.jsp"> 게임시작 </a>
-
 </body>
 </html>
