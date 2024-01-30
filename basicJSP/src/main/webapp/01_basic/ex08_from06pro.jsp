@@ -7,8 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-  <h1> <%= request.getParameter("num") %></h1>
-   
+  <h1> <%= request.getParameter("num1") %></h1>
+     <h1> <%= request.getParameter("num2") %></h1>
    
 </body>
 </html>
