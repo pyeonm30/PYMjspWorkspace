@@ -4,7 +4,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
-<script type="text/javascript" src="common.js"></script>
+<script type="text/javascript" src="commom.js"></script>
 <%
 ArrayList<String> sampleId=new ArrayList<String>(Arrays.asList("qwer","abcd","hello","admin"));
 ArrayList<String> samplePw=new ArrayList<String>(Arrays.asList("1111","2222","3333","admin"));
