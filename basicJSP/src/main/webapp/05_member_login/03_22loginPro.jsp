@@ -38,6 +38,9 @@ if(!pass){
 }
 session.setAttribute("log", idx);
 if(id.equals("admin")){
+	
+	session.setAttribute("admin", "admin");
+	
 	%>
 	<script>
 	

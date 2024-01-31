@@ -4,6 +4,7 @@
 <% 
   if(session.getAttribute("log")== null){
 	  response.sendRedirect("index.jsp");
+	  return;
   }
  int log = (int)session.getAttribute("log");
  ArrayList<String> nameList = (ArrayList<String>)session.getAttribute("namelist");

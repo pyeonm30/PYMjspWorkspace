@@ -18,8 +18,6 @@ if(pw.equals(pwlist.get(idx))){
 
 namelist.set(idx , name);
 genderlist.set(idx,gender);
-session.setAttribute("namelist", namelist);
-session.setAttribute("genderList", genderlist);
 
 %>
 <script>
