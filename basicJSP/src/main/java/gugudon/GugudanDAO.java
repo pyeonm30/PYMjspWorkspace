@@ -5,14 +5,15 @@ import java.util.Random;
 
 public class GugudanDAO {
 
-	public int count;
-	public int score;
+	private int count;
+	private int score;
 	
 	ArrayList<GugudanVO> quiz;
 	
 	public GugudanDAO(){
 		quiz = new ArrayList<GugudanVO>();
 		makeQuiz();
+		count =0;
 	}
 	
 	private void makeQuiz() {
@@ -22,15 +23,35 @@ public class GugudanDAO {
 			GugudanVO vo = new GugudanVO(rd.nextInt(8)+2,rd.nextInt(9)+1);
 			quiz.add(vo);
 		}
+		
+		System.out.println(quiz);
 	}
 	
-	public boolean checkAnswer() {
-		System.out.println("test");
-		return true;
+	public boolean checkAnswer(String input) {
+		int answer = Integer.parseInt(input);
+		GugudanVO vo = quiz.get(count);
+		
+		if(answer == vo.getNum1()*vo.getNum2() ) {
+			score+=20;
+			count+=1;
+			return true;
+		}
+		count+=1;
+		return false;
 	}
 	
 	public String getQuiz() {
+		
 		return quiz.get(count).toString();
 	}
-	
+
+	public int getCount() {
+		return count;
+	}
+
+
+	public int getScore() {
+		return score;
+	}
+
 }

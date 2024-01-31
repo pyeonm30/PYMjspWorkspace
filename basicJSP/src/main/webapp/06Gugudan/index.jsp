@@ -1,5 +1,23 @@
+<%@page import="gugudon.GugudanDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<%
+GugudanDAO dao = null; 
+if(session.getAttribute("dao")== null){
+	session.setAttribute("dao", new GugudanDAO());
+}else{
+  dao = (GugudanDAO)session.getAttribute("dao");
+	if(dao.getCount() >= 5){
+		session.invalidate();
+		response.sendRedirect("index.jsp");
+	}
+}
+
+
+
+%>    
+    
 <!DOCTYPE html>
 <html>
 <head>
