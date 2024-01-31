@@ -29,11 +29,8 @@ if(idx != -1&& pw.equals(pwList.get(idx))){
 if(!pass){
 	%>
 	<script>
-	
 	msgUrl("로그인실패" ,"03_21loginForm.jsp" );
-	
 	</script>
-	
 	<%
 }
 session.setAttribute("log", idx);
