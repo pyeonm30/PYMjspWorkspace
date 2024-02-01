@@ -9,7 +9,7 @@
       }
     
     BoardDAO dao = (BoardDAO)session.getAttribute("dao");
-    int idx =0;
+    int idx =-1;
     try{
     	idx = Integer.parseInt(request.getParameter("idx"));
     	if(idx < 0 || idx >= dao.getTotalData()){
@@ -20,10 +20,7 @@
       	 return;
     }
     
-    
-    
-    
-    Board b = null;
+    Board b = dao.getOneBoard(idx);
     %>
 <!DOCTYPE html>
 <html>
@@ -48,7 +45,7 @@
 			<tr>
 				<th>제목</th>
 				<td colspan="3">
-					<input type="text" name="subject" value="<%= b.getContents() %>">
+					<input type="text" name="subject" value="<%= b.getSubject() %>">
 				</td>
 			</tr>
 			<tr>
@@ -59,7 +56,7 @@
 			</tr>
 			<tr>
 				<td colspan="4">
-					<input type="hidden" name="index" value="<%= b.getNo() %>">
+					<input type="hidden" name="index" value="<%= idx %>">
 					<input type="submit" value="수정하기">
 				</td>
 			</tr>

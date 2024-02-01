@@ -64,4 +64,14 @@ public class BoardDAO {
 		
 	}
 	
+	public void updateOneBoard(String index, String subject, String contents) {
+		int idx = Integer.parseInt(index);
+		Board b = getOneBoard(idx);
+		
+		b.setSubject(subject);
+		b.setContents(contents);
+		System.out.println(b);
+		System.out.println("[ 게시글 1개 수정 완료]");
+	}
+	
 }
