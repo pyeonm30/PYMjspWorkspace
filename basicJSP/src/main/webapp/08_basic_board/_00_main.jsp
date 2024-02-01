@@ -26,6 +26,7 @@ if(session.getAttribute("dao") == null){
 	<hr>
 	
 	<h3><a href="_07_boardListPaging.jsp">페이징 게시판</a></h3>
+	<h3><a href="_08_boardListPaging2.jsp">페이징 게시판2</a></h3>
 
 </body>
 </html>
