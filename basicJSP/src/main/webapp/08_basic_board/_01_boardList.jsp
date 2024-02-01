@@ -35,7 +35,7 @@ BoardDAO dao = (BoardDAO)session.getAttribute("dao");
 			  <td> <%=b.getNo() %></td>
 			  <td> <%=b.getWriter() %></td>
 			  <td> <%=b.getRegDate() %></td>
-			  <td> <%=b.getSubject() %></td>
+			  <td> <a href="_05_updateBoard.jsp?idx=<%= i %>" > <%=b.getSubject() %> </a> </td>
 			  <td> <%=b.getContents() %></td>
 			  <td> <button onclick="location.href='_06_deleteBoardPro.jsp?idx=<%= i %>'"> 삭제 </button></td>
 			</tr>
