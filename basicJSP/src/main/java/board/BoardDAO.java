@@ -25,4 +25,14 @@ public class BoardDAO {
 		
 				
 	}
+	
+	public int getTotalData() {
+		return list.size();
+	}
+	
+	public Board getOneBoard(int idx) {
+		return list.get(idx);
+	}
+	
+	
 }

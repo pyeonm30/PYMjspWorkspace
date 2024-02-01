@@ -6,6 +6,8 @@
 if(session.getAttribute("dao")==null){
 	session.setAttribute("dao", new BoardDAO());
 }
+
+System.out.println("index.jsp");
 response.sendRedirect("_00_main.jsp");
 
 %>
