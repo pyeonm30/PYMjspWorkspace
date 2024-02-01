@@ -95,4 +95,41 @@ public class BoardDAO {
 		
 	}
 	
+	//----------
+	
+	public int boardCnt = 5; // 한페이지에보여줄게시글수
+	public int curPageNum = 1; // 현재페이지번호
+	
+	public void setCurPageNum(String start) {
+		curPageNum  = Integer.parseInt(start);
+	}
+	public int[] getRowData() {
+		// 0~4
+		
+	 int startNum = (curPageNum -1)*boardCnt; //현재페이지의게시글시작번호
+	 int endNum = startNum + boardCnt; // 현재페이지의게시글마지막번호
+	  endNum = endNum > list.size()? list.size():endNum;
+	  int[] arr = {startNum , endNum};
+	  return arr;
+	}
+	
+	//--------------
+	public int pageNumCnt = 3; //한페이지에보여줄페이지번호개수
+	public int startPageNum = 1; // 한페이지에보여줄페이지시작번호
+	
+	public void setStartPageNum(String end) {
+		startPageNum = Integer.parseInt(end);
+	}
+	
+	public int getEndPageNum() {
+		int endPageNum = startPageNum + pageNumCnt -1;
+		endPageNum = endPageNum > getTotalPageCnt()? getTotalPageCnt() : endPageNum;
+		return endPageNum; 
+		
+	}
+	// 전체 페이지 카운트 
+	public int getTotalPageCnt() {
+		return list.size() % boardCnt == 0? list.size() / boardCnt : list.size() / boardCnt + 1;
+	}
+	
 }
