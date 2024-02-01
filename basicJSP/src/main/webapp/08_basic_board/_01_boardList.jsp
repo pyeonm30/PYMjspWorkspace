@@ -42,5 +42,7 @@ BoardDAO dao = (BoardDAO)session.getAttribute("dao");
 		
 		<%} %>
 	</table>
+	<br><br>
+	<button onclick="location.href='_00_main.jsp'"> 메인으로 </button>
 </body>
 </html>
