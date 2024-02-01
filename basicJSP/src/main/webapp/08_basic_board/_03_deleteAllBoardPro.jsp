@@ -1,12 +1,16 @@
+<%@page import="board.BoardDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
+<%
+if(session.getAttribute("dao") == null){
+	response.sendRedirect("index.jsp");
+	return;
+}
+BoardDAO dao = (BoardDAO)session.getAttribute("dao");
 
-</body>
-</html>
+dao.deleteAllData();
+%>
+<script>
+alert('전체 데이터 삭제 완료');
+location.href='_01_boardList.jsp';
+</script>

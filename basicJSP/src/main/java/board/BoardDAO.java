@@ -40,11 +40,19 @@ public class BoardDAO {
 		
 		for(int i =0; i < size;i++) {
 			
-			Board b = new Board(cnt++,"작성자"+cnt,date.plusDays(i).toString(),"제목"+cnt,"내용"+cnt);
+			Board b = new Board(cnt,"작성자"+cnt,date.plusDays(i).toString(),"제목"+cnt,"내용"+cnt);
+			cnt+=1;
 			list.add(b);
 		}
 		System.out.println("[ 더미 추가 완료 ]");
 		
+	}
+	
+	public void deleteAllData() {
+		//list = new ArrayList<Board>();
+		list.clear();
+		cnt = 1; // 전체 삭제할때만 cnt 1로 초기화 했음 
+		System.out.println("[ 전체 데이터 삭제완료 ]");
 	}
 	
 	
