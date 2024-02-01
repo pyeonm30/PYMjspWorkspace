@@ -1,5 +1,6 @@
 package board;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class BoardDAO {
@@ -23,7 +24,6 @@ public class BoardDAO {
 		list.add(b2);
 		list.add(b3);
 		
-				
 	}
 	
 	public int getTotalData() {
@@ -32,6 +32,19 @@ public class BoardDAO {
 	
 	public Board getOneBoard(int idx) {
 		return list.get(idx);
+	}
+	
+	public void createDummies(int size) {
+		
+		LocalDate date = LocalDate.now();
+		
+		for(int i =0; i < size;i++) {
+			
+			Board b = new Board(cnt++,"작성자"+cnt,date.plusDays(i).toString(),"제목"+cnt,"내용"+cnt);
+			list.add(b);
+		}
+		System.out.println("[ 더미 추가 완료 ]");
+		
 	}
 	
 	
