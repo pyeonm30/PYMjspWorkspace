@@ -55,5 +55,13 @@ public class BoardDAO {
 		System.out.println("[ 전체 데이터 삭제완료 ]");
 	}
 	
+	public void addOneBoard(String writer, String subject ,String contents) {
+		LocalDate date = LocalDate.now();
+		Board b = new Board(cnt++,writer,date.toString(),subject,contents);
+		list.add(b);
+		System.out.println(b);
+		System.out.println("[ 게시글 1개 추가 완료]");
+		
+	}
 	
 }
