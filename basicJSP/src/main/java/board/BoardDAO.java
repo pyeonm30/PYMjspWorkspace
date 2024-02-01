@@ -74,4 +74,25 @@ public class BoardDAO {
 		System.out.println("[ 게시글 1개 수정 완료]");
 	}
 	
+	public boolean deleteOneBoard(String index) {
+		
+		int idx = -1;
+		
+		try {
+			idx = Integer.parseInt(index);
+			if(idx < 0 || idx>= list.size()) {
+				throw new Exception();
+			}
+		
+			list.remove(idx);
+			System.out.println("[ 게시글 1개 삭제 완료]");
+			return true;
+		}catch(Exception e) {
+			System.out.println("[ 게시글 1개 삭제 실패]");
+			return false;
+		}
+		
+		
+	}
+	
 }
