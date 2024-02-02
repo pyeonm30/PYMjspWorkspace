@@ -10,9 +10,8 @@
   }else{
 	  num = Integer.parseInt(request.getParameter("num"));
   }
-  //Member vo=MemberDAO.getInstance().memberContent(num);
   
-  Member vo = null;
+  Member vo = MemberDAO.getInstance().getMemberByNum(num);
 %>    
 
 

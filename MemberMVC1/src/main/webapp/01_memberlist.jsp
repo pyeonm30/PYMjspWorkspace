@@ -29,7 +29,7 @@ ArrayList<Member> list = MemberDAO.getInstance().getMemberList();
     	    <td><%=vo.getAge()%></td>
     	    <td><%=vo.getEmail()%></td>
     	    <td><%=vo.getPhone()%></td>
-    	    <td><input type="button" value="삭제" class="btn btn-outline-dark" onclick="location.href='06_memberDeletePro.jsp?id=<%=vo.getId()%>'"></td>
+    	    <td><input type="button" value="삭제" class="btn btn-outline-dark" onclick="location.href='06_memberDeletePro.jsp?num=<%=vo.getNum()%>'"></td>
     	  </tr>    	 
   <% } %>
 

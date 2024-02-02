@@ -63,9 +63,11 @@ public class MemberDAO {
 				list.add(m);
 				System.out.println(m);
 			}
-			dbClose();
+		
 		} catch (SQLException e) {
 			e.printStackTrace();
+		}finally {
+			dbClose();
 		}
 		
 		return list;
@@ -89,14 +91,101 @@ public class MemberDAO {
 			return num;
 		}catch(SQLException e) {
 			e.printStackTrace();
+		}finally {
+			dbClose();
 		}
 		
 		return 0;
 		
 	}
 	
+	public Member getMemberByNum(int num ) {
+		ArrayList<Member> list = getMemberList();
+		for(Member m : list) {
+			if(m.getNum() == num) {
+				return m;
+			}
+		}
+		return null;
+	}
+	
+
+	public int addOneMember(Member member) {
+		String sql ="insert into member values(null,?,?,?,?,?,?)";
+		int row =0;
+		try {
+			getConnect();
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, member.getId());
+			ps.setString(2, member.getPass());
+			ps.setString(3, member.getName());
+			ps.setInt(4, member.getAge());
+			ps.setString(5, member.getEmail());
+			ps.setString(6, member.getPhone());
+			row=ps.executeUpdate(); // 삽입한 row 갯수를 리턴 
+			System.out.println(" 회원 추가 완료 = " + row);
+			
+			
+		}catch(SQLException e) {
+			
+		}finally{
+			dbClose();
+		}
+		return row;
+	}
+	
+	public int deleteOneMember(int num ) {
+	  String sql="delete from member where num = ?";
+	  int cnt =0;
+	  try {
+		  getConnect();
+		  ps = conn.prepareStatement(sql);
+		  ps.setInt(1, num);
+		  cnt = ps.executeUpdate();
+		  
+		  if(cnt >0) {
+			  System.out.println("회원 삭제 성공");
+		  }else {
+			  System.out.println("회원 삭제 실패");
+		  }
+		  
+	  }catch(SQLException e) {
+			
+		}finally{
+			dbClose();
+		}
+	  return cnt;
+	}
+	
+    public int updateOneMember(int num, int age, String email, String phone) {
+    	int cnt =0;
+    	  String sql="update member set age=? , email=?, phone=? where num = ?";
+   
+    	  try {
+    		  getConnect();
+    		  ps = conn.prepareStatement(sql);
+    		  ps.setInt(1, age);
+    		  ps.setString(2,email);
+    		  ps.setString(3,phone);
+    		  ps.setInt(4, num);
+    		  cnt = ps.executeUpdate();
+    		  
+    		  if(cnt >0) {
+    			  System.out.println("회원 수정 성공");
+    		  }else {
+    			  System.out.println("회원 수정 실패");
+    		  }
+    		  
+    	  }catch(SQLException e) {
+    			
+    		}finally{
+    			dbClose();
+    		}
+    	return cnt;
+    }
+	
 	// 데이터베이스 연결 끊기
-	public void dbClose() {
+	private void dbClose() {
 		  try { 
 		   if(rs!=null) rs.close();
 		   if(ps!=null) ps.close();

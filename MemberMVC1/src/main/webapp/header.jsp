@@ -20,7 +20,7 @@
             <%}else{ %>
      
                     <div class="w-25 py-3" onclick="location.href='05_memberContent.jsp?num=<%=(int)session.getAttribute("log") %>'"> 내정보 </div>
-                    <div class="w-25 py-3" onclick="location.href='03_Memberlogout.jsp'"> 로그아웃 </div>
+                    <div class="w-25 py-3" onclick="location.href='03_memberLogoutPro.jsp'"> 로그아웃 </div>
             <%} %>
         </div>
 </header>

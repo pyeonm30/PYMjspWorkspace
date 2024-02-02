@@ -26,7 +26,11 @@ insert into member(id,pass,name,age,email,phone) values('test5','5555','테스�
 insert into member(id,pass,name,age,email,phone) values('test6','6666','테스트6',36,'test6@test.com','010-1111-1230');
 insert into member(id,pass,name,age,email,phone) values('test7','7777','테스트7',37,'test7@test.com','010-1111-1210');
 
-select * from member;
+select * from member where num = 6;
+
+delete from member where num = 3;
+
+update member set age=10 , email='tt', phone='12' where num = 6;
 
 select * from member where id = 'test2' and pass='2222';
-
+insert into member values(null,'test8','8888','테스트8',37,'test8@test.com','010-1111-1210');
