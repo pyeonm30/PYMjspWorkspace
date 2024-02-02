@@ -20,7 +20,20 @@ ArrayList<Member> list = MemberDAO.getInstance().getMemberList();
     <td>전화번호</td>
     <td>삭제</td>
   </tr>
+  <% for(Member vo : list){ %>
+    	  <tr>
+    	    <td><%=vo.getNum()%></td>
+    	    <td><a href="05_memberContent.jsp?num=<%=vo.getNum()%>"><%=vo.getId()%></a></td>
+    	    <td><%=vo.getPass()%></td>
+    	    <td><%=vo.getName()%></td>
+    	    <td><%=vo.getAge()%></td>
+    	    <td><%=vo.getEmail()%></td>
+    	    <td><%=vo.getPhone()%></td>
+    	    <td><input type="button" value="삭제" class="btn btn-outline-dark" onclick="location.href='06_memberDeletePro.jsp?id=<%=vo.getId()%>'"></td>
+    	  </tr>    	 
+  <% } %>
 
+</table>
 
 </body>
 </html>
