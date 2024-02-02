@@ -1,7 +1,12 @@
+<%@page import="kr.basic.member.Member"%>
+<%@page import="kr.basic.member.MemberDAO"%>
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file= "header.jsp" %>
-
+<%
+ArrayList<Member> list = MemberDAO.getInstance().getMemberList();
+%>
 <h1 class="py-3"> 회원 목록</h1>
 
 <table class=" py-10 table table-bordered">
