@@ -1,0 +1,1 @@
+select * from member;   -- alr + x => 쿼리문 실행 
