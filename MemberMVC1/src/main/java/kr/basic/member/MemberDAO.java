@@ -63,7 +63,7 @@ public class MemberDAO {
 				list.add(m);
 				System.out.println(m);
 			}
-			
+			dbClose();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -71,6 +71,34 @@ public class MemberDAO {
 		return list;
 	}
 	
+	
+	public boolean checkLogin(String id , String pass) {
+		String sql = "select * from member where id =? and pass= ?";
+		try {
+			getConnect();
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, id);
+			ps.setString(2, pass);
+			rs = ps.executeQuery();
+			return rs.next();
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return false;
+		
+	}
+	
+	// 데이터베이스 연결 끊기
+	public void dbClose() {
+		  try { 
+		   if(rs!=null) rs.close();
+		   if(ps!=null) ps.close();
+		   if(conn!=null) conn.close();
+		  }catch(SQLException e) {
+			  e.printStackTrace();
+		  }
+	}   
 	
 	
 }

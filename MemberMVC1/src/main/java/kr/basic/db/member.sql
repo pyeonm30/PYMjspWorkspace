@@ -28,3 +28,5 @@ insert into member(id,pass,name,age,email,phone) values('test7','7777','테스�
 
 select * from member;
 
+select * from member where id = 'test2' and pass='2222';
+

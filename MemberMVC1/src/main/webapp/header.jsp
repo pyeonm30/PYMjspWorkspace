@@ -10,13 +10,18 @@
 </head>
 <body>
 
-<header>
-	<div class ="row">
-		<div class="w-50 py-3"> 회원목록 </div>
-		<div class="w-25 py-3"> 회원가입 </div>
-		<div class="w-25 py-3"> 로그인 </div>
-		<div class="w-25 py-3"> 내정보 </div>
-		<div class="w-25 py-3"> 로그아웃 </div>
-	</div>
+  <header>
+          <div class="row">  <!--py-3(y축으로) 높이 column row )-->
+            <div class="w-50 py-3" onclick="location.href='01_memberlist.jsp'"> 회원목록 </div>
+            
+            <%if(session.getAttribute("log")==null){ %>
+            <div class="w-25 py-3" onclick="location.href='04_memberInsert.jsp'"> 회원가입 </div>
+            <div class="w-25 py-3"  onclick="location.href='02_memberLogin.jsp'"> 로그인 </div>
+            <%}else{ %>
+     
+                    <div class="w-25 py-3" onclick="location.href='05_memberContent.jsp?num=<%=(int)session.getAttribute("log") %>'"> 내정보 </div>
+                    <div class="w-25 py-3" onclick="location.href='03_Memberlogout.jsp'"> 로그아웃 </div>
+            <%} %>
+        </div>
 </header>
 
