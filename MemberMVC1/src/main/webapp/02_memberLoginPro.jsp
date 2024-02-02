@@ -5,14 +5,20 @@
 
    String id = request.getParameter("id");
    String pw = request.getParameter("pw");
-   boolean check = MemberDAO.getInstance().checkLogin(id, pw);
+   int check = MemberDAO.getInstance().checkLogin(id, pw);
    
-   if(check){
-	   session.setAttribute("log", id);
+   if(check!=0){
+	   session.setAttribute("log", check);
    %>
    <script>
 alert('로그인성공')
 location.href="01_memberlist.jsp";
+</script>
+   
+   <%}else{ %>
+      <script>
+alert('로그인실패')
+location.href="02_memberLogin.jsp";
 </script>
    
    <%} %>

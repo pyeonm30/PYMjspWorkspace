@@ -72,20 +72,26 @@ public class MemberDAO {
 	}
 	
 	
-	public boolean checkLogin(String id , String pass) {
+	public int checkLogin(String id , String pass) {
 		String sql = "select * from member where id =? and pass= ?";
+		int num = 0;
 		try {
 			getConnect();
 			ps = conn.prepareStatement(sql);
 			ps.setString(1, id);
 			ps.setString(2, pass);
 			rs = ps.executeQuery();
-			return rs.next();
+			
+			if(rs.next()) {
+				num =  rs.getInt("num");
+			}
+			
+			return num;
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}
 		
-		return false;
+		return 0;
 		
 	}
 	
