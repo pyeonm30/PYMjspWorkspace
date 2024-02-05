@@ -1,0 +1,15 @@
+package kr.basic.member;
+
+public class MemberDAO {
+
+	private MemberDAO() {}
+	
+	static private MemberDAO instance;
+	static private MemberDAO getInstance() {
+		if(instance == null) {
+			instance = new MemberDAO();
+		}
+		return instance;
+	}
+	
+}

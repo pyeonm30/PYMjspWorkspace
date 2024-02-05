@@ -1,0 +1,33 @@
+<%@page import="java.sql.SQLException"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.Connection"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
+<%
+
+// java에서 데이터베이스 직접 연결하기 
+
+String url = "jdbc:mysql://localhost:3306/testdb?charaterEncoding=UTF-8&serverTimezone=UTC";
+String user ="root";
+String password="1234";
+
+try{
+	Class.forName("com.mysql.jdbc.Driver");
+	Connection conn = DriverManager.getConnection(url, user, password);
+	System.out.println(conn);
+}catch(SQLException e){
+	System.out.println("연동실패");
+}
+
+%>    
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>

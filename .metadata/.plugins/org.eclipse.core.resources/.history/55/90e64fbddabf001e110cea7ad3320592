@@ -1,0 +1,26 @@
+<%@page import="java.util.ArrayList"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%
+
+int idx = (int)session.getAttribute("log");
+
+String pw = request.getParameter("pw");
+String name = request.getParameter("name");
+String gender = request.getParameter("gender");
+
+
+ArrayList<String> pwlist = (ArrayList<String>)session.getAttribute("pwList");
+ArrayList<String> namelist = (ArrayList<String>)session.getAttribute("namelist");
+ArrayList<String> genderlist = (ArrayList<String>)session.getAttribute("genderList");
+
+namelist.set(idx , name);
+genderlist.set(idx,gender);
+
+session.setAttribute("namelist", namelist);
+session.setAttribute("genderList", genderlist);
+
+
+
+
+%>

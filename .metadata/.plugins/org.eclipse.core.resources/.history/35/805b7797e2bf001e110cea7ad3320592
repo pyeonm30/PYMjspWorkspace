@@ -1,0 +1,32 @@
+package gugudon;
+
+import java.util.ArrayList;
+import java.util.Random;
+
+public class GugudanDAO {
+
+	int count;
+	int score;
+	
+	ArrayList<GugudanVO> quiz;
+	
+	public GugudanDAO(){
+		quiz = new ArrayList<GugudanVO>();
+		makeQuiz();
+	}
+	
+	private void makeQuiz() {
+		Random rd = new Random();
+
+		for(int i =0; i < 5; i+=1) {
+			GugudanVO vo = new GugudanVO(rd.nextInt(8)+2,rd.nextInt(9)+1);
+			quiz.add(vo);
+		}
+	}
+	
+	boolean checkAnswer() {
+		System.out.println("test");
+		return true;
+	}
+	
+}

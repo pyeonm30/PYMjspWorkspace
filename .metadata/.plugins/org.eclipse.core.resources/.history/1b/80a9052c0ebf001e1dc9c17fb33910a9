@@ -1,0 +1,24 @@
+package basic;
+
+public class Util {
+	
+	public boolean isNumValue(String str) {
+		String numbers ="0123456789";
+		System.out.println("test = " +str.charAt(0));
+		System.out.println(str.charAt(0) != '-');
+		
+		System.out.println(!(numbers.contains(str.charAt(0)+""));
+		if(str.charAt(0) != '-' || !numbers.contains(str.charAt(0)+"")) {
+			return false;
+		}
+		
+		for(int i=1; i<str.length(); i++) {
+			if(!Character.isDigit(str.charAt(i))) {
+				return false;
+			}
+		}
+		
+		System.out.println("test = " + str);
+		return true;
+	}
+}

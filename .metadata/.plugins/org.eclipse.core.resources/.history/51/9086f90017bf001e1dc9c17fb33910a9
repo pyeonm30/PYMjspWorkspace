@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body><h1> ex01basic.html</h1>
+<a href="./ex00basic.jsp"> ex00basic 이동 </a>
+<h1> 3 + 10 </h1>
+<h1> 2024년 01월 29일</h1>
+</body>
+</html>

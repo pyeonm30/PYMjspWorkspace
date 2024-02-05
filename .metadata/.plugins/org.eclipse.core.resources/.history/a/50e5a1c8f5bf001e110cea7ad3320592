@@ -1,0 +1,39 @@
+package member;
+
+import java.util.ArrayList;
+
+public class MemberDAO {
+
+	ArrayList<Member> list;
+	public MemberDAO() {
+		list = new ArrayList<Member>();
+		init();
+	}
+	
+	public void addMember(Member m ) {
+		
+	}
+	
+	public boolean checkId(String id) {
+		return false;
+	}
+	
+	private void init() {
+		
+		Member m1 = new Member("admin","admin","관리자",true);
+		Member m2 = new Member("qwer","1111","홍길동",true);
+		Member m3 = new Member("aaaa","2222","개똥이",true);
+		Member m4 = new Member("abcd","3333","홍길순",false);
+		Member m5 = new Member("test","4444","아이유",false);
+		
+		list.add(m1);
+		list.add(m2);
+		list.add(m3);
+		list.add(m4);
+		list.add(m5);
+		
+		System.out.println("[데이터 로드 완료]");
+		
+	}
+	
+}

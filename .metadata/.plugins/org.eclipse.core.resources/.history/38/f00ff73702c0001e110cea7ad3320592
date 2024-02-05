@@ -1,0 +1,25 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ include file="./common.jsp" %>    
+<% 
+if(request.getParameter("idx") == null || 
+	session.getAttribute("admin") == null
+		){
+	%>
+	<script type="text/javascript">
+    msgError();
+   </script>
+	<%
+}
+
+int idx = Integer.parseInt(request.getParameter("idx"));
+
+if(dao.deleteAMember(idx)!=null){
+	<script>
+	msgGoMain("회원 탈퇴 완료 ");
+	</script>
+
+}
+
+
+%>

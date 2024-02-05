@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body><h1> ex01basic.html</h1>
+<a href="./ex00basic.jsp" />
+<h1> 3 + 10 </h1>
+</body>
+</html>

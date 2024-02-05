@@ -1,0 +1,26 @@
+package member;
+
+import java.util.ArrayList;
+
+public class MemberDAO {
+
+	ArrayList<Member> list;
+	public MemberDAO() {
+		list = new ArrayList<Member>();
+	}
+	
+	public void addMember(Member m ) {
+		
+	}
+	
+	public boolean checkId(String id) {
+		return false;
+	}
+	
+	private void init() {
+		
+		
+		
+	}
+	
+}

@@ -1,0 +1,10 @@
+package board;
+
+public class BoardDAO {
+	
+	private ArrayList<Board> list;
+	
+	public BoardDAO(){
+		
+	}
+}

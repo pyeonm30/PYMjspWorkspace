@@ -1,0 +1,25 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ include file="./common.jsp" %>    
+<%
+
+  String id = request.getParameter("id");
+  String pw = request.getParameter("pw");
+  
+  boolean pass = dao.checkLogin(id, pw);
+  
+  if(pass){
+	  if(id.equals("admin")){
+		  
+	  }
+	  
+  }else{
+		%>
+		<script>
+		msgUrl("로그인실패" ,"03_21loginForm.jsp" );
+		</script>
+		<%
+	  
+  }
+
+%>

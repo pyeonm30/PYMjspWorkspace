@@ -1,0 +1,7 @@
+127.0.0.1 - - [05/Feb/2024:10:31:34 +0900] "GET / HTTP/1.1" 404 808
+0:0:0:0:0:0:0:1 - - [05/Feb/2024:10:31:35 +0900] "GET /MemberMVC1/01_memberlist.jsp HTTP/1.1" 200 3982
+0:0:0:0:0:0:0:1 - - [05/Feb/2024:10:31:35 +0900] "GET /MemberMVC1/css/style.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [05/Feb/2024:10:31:35 +0900] "GET /favicon.ico HTTP/1.1" 404 819
+0:0:0:0:0:0:0:1 - - [05/Feb/2024:10:32:13 +0900] "GET /MemberMVC1/member/01_memberlist.jsp HTTP/1.1" 200 3982
+0:0:0:0:0:0:0:1 - - [05/Feb/2024:10:32:13 +0900] "GET /MemberMVC1/member/css/style.css HTTP/1.1" 404 851
+0:0:0:0:0:0:0:1 - - [05/Feb/2024:10:32:24 +0900] "GET /MemberMVC1/member/01_memberlist.jsp HTTP/1.1" 200 3983

@@ -1,0 +1,18 @@
+<%@page import="java.util.ArrayList"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
+<script type="text/javascript" src="commom.js"></script>
+
+<% 
+  if(session.getAttribute("log")== null){
+	  response.sendRedirect("index.jsp");
+  }
+
+String id = request.getParameter("id");
+String pw = request.getParameter("pw");
+
+ArrayList<String> idList = (ArrayList<String>)session.getAttribute("idList");
+
+%>
+
