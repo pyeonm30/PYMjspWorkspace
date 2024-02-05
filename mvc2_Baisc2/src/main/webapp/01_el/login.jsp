@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form method="post" action="loginPro.do">
+	<form method="post" action="<%= request.getContextPath() %>/loginPro2.do">
 		아이디 : <input type="text" name="id">		<br>
 		비밀번호 : <input type="password" name="pw">	<br>
 		<input type="submit" value="로그인">			

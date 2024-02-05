@@ -13,7 +13,7 @@
 		request.setAttribute("name1", "홍길동");
 		request.setAttribute("name2", "이순신");
 	%>  	
-  	${name1 ne name2}
+  	${name1 eq name2}
   	
   	${null ne name1}
   	<%-- list, map등 객체가 비어있는지 확인 : empty, !empty --%>
