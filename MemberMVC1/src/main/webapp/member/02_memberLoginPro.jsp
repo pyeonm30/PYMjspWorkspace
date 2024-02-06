@@ -6,8 +6,8 @@
    String id = request.getParameter("id");
    String pw = request.getParameter("pw");
    int check = MemberDAO.getInstance().checkLogin(id, pw);
-   
-   //System.out.println(num);
+   int num =100;
+   out.println("<h1>" +num +"</h1>");
    if(check!=0){
 	   session.setAttribute("log", check);
    %>
