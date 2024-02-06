@@ -22,8 +22,12 @@ public class MemberListController extends HttpServlet {
 
 		ArrayList<MemberVO> list=MemberDAO.getInstance().memberList();		
 		request.setAttribute("list", list);
-		RequestDispatcher rd=request.getRequestDispatcher("member/memberlist.jsp");
-		rd.forward(request, response); //-----------------------------------▲
+		String ctx = request.getContextPath();
+		
+		//response.sendRedirect(ctx +"/WEB-INF/member/memberlist.jsp");
+		
+		RequestDispatcher rd=request.getRequestDispatcher("WEB-INF/member/memberlist.jsp");
+		rd.forward(request, response); 
 		
 	}
 }

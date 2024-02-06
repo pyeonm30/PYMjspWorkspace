@@ -3,7 +3,7 @@
 <%@page import="kr.basic.model.MemberDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ include file= "header.jsp" %>
+<%@ include file= "../../member/header.jsp" %>
 <script type="text/javascript">
   function deleteFn(id){
 	  location.href="${ctx}/memberDelete.do?id="+id; 
