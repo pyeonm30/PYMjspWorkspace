@@ -10,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import kr.basic.model.MemberDAO;
 import kr.basic.model.MemberVO;
@@ -19,14 +20,18 @@ public class MemberListController implements Controller{
 	@Override
 	public String requestHandler(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// POJO가 해야할 일의 범위 => 비지니스 로직 : memberList DB 불러와서 뿌리기 
-		// 1. Model 연동
+
 		ArrayList<MemberVO> list=MemberDAO.getInstance().memberList();	
-		// 2. 객체바인딩
+
 		request.setAttribute("list", list);
-		// member/memberList.jsp
-		// 다음페이지는 
-		// 3.다음페이지정보(View)
+		HttpSession session = request.getSession();
+		if(session.getAttribute("log")!= null) {
+			int num = (int)session.getAttribute("log");
+			request.setAttribute("num",num);
+			
+		}else {
+		request.setAttribute("num",null);
+		}
 		return "memberList";
 
 	}
