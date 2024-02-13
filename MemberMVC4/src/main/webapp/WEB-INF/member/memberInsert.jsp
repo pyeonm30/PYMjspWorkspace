@@ -47,7 +47,7 @@ input[type=submit], input[type=reset] {
 			</tr>
 			<tr>
 				<td>첨부파일</td>
-				<td><input type="file" class="control-label" id="file" name="file"></td>
+				<td><input type="file" class="control-label" id="file" name="file" id="uploadFile"></td>
 			</tr>
 			<tr>
 				<td colspan="2" id="btns">
@@ -63,6 +63,7 @@ input[type=submit], input[type=reset] {
 
 
 <script type="text/javascript">
+
 
 let check = 0;
 function validCheck(form){
@@ -176,8 +177,26 @@ function getResult(data) {
     document.getElementById("id").style.border = "";
   });
 
+ //---------------- 파일 업로드 -----------------
 
-
+  document.getElementById("uploadFile").addEventListener("click" , ()=> {
+		 let file = document.getElementById("file").value.trim();
+		 if(file.length == 0 ){ return;}
+		 
+  		 let formData=new FormData();
+	     formData.append("file", $("input[name=file]")[0].files[0]);
+	     
+	  fetch("fileAdd.do", {
+	    method: "POST",
+	    headers: {
+	      "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+	    },
+	    body: "id=" + id,
+	  })
+	  .then(response => response.text())
+	  .then(getResult)
+	  .catch(() => alert("error"));
+	});
 
 
 

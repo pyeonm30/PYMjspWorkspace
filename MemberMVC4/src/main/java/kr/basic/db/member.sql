@@ -9,7 +9,7 @@ create table member(
  age int not null,
  email varchar(30) not null,
  phone varchar(30) not null,
- fileName varchar(100),
+ sName varchar(100),
  unique key(id)
 );
 desc member;
