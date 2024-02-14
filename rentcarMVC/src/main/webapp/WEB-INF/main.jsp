@@ -3,20 +3,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="./parts/header.jsp"%>
-<script type="text/javascript" src="script/main.js" defer></script>
-<div>
-	<div class="home">
-		<span class="fs-1 fw-bold"> 연미의 렌트카 </span>
-	</div>
 
-	<div>
-		<img class="slide1" src="img/1.jpg"> 
-		<img class="slide1" src="img/2.jpg">
-		 <img class="slide1" src="img/3.jpg">
-		 <img class="slide1" src="img/4.jpg"> 
-		 <img class="slide1" src="img/5.jpg">
-	</div>
+    <main>
+      <div class="inner">
+        <h2> 연미 렌트카 메인 페이지 </h2>
+        <div class="slider">
+          <div class="slide"> <img src="img/1.jpg" /></div>
+          <div class="slide"><img src="img/2.jpg" /></div>
+          <div class="slide"><img src="img/3.jpg" /></div>
+        </div>
 
-</div>
-
+      </div>
+    </main>
 <%@ include file="./parts/footer.jsp"%>
+

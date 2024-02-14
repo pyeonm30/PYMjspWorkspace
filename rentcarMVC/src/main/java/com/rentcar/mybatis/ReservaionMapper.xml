@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.reservation">
+  <resultMap id="reservation" type="com.rentcar.vo.Reservation">
+  <id property="reserveSeq" column="reserve_seq"/>
+  <result property="num" column="num"/>
+  <result property="userid" column="userid"/>
+  <result property="qty" column="qty"/>
+  <result property="dday" column="dday"/>
+  <result property="rday" column="rday"/>
+  <result property="usein" column="usein"/>
+  <result property="usewifi" column="usewifi"/>
+  <result property="usenavi" column="usenavi"/>
+  <result property="useseat" column="useseat"/>
+  </resultMap>
+
+
+<select id="getAllReserveList" resultMap="reservation">
+	 select * from reservation order by reserve_seq desc;
+	</select>
+  
+  	<select id="getUserReserveList" parameterType="String" resultMap="reservation" >
+	  select * from reservation where userid = #{userid} order by reserve_seq desc;
+	</select>
+	
+	<select id="getCarReserveList" parameterType="Integer" resultMap="reservation" >
+	  select * from reservation where num = #{num} order by rday;
+	</select>
+	
+	   <insert id="reservationInsert" parameterType="reservation">
+	   INSERT INTO reservation(num,userid, qty, dday, rday, usein, usewifi, usenavi, useseat)
+        VALUES (#{num},#{userid}, #{qty}, #{dday}, #{rday}, #{usein}, #{usewifi}, #{usenavi}, #{useseat})
+	   </insert>
+	   <delete id="reservationDelete" parameterType="Integer">  
+        delete from reservation where reserve_seq = #{reserve_seq};
+    </delete>
+
+	
+</mapper>
