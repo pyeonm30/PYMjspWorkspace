@@ -1,7 +1,7 @@
 package com.rentcar.vo;
 
 public class JoinCarView {
-	private int reg_no;
+	private int regNo;
 	private String name;
 	private int price;
 	private String img;
@@ -12,14 +12,51 @@ public class JoinCarView {
 	private int usewifi;
 	private int useseat;
 	private int usenavi;
+	private int totalPrice;
+	private String endDate;
 	
 	
-	public int getReg_no() {
-		return reg_no;
+
+	public int getRegNo() {
+		return regNo;
 	}
-	public void setReg_no(int reg_no) {
-		this.reg_no = reg_no;
+
+
+	public void setRegNo(int regNo) {
+		this.regNo = regNo;
 	}
+
+
+	@Override
+	public String toString() {
+		return "JoinCarView [ name=" + name + ", price=" + price + ", img=" + img + ", qty=" + qty
+				+ ", dday=" + dday + ", rday=" + rday + ", usein=" + usein + ", usewifi=" + usewifi + ", useseat="
+				+ useseat + ", usenavi=" + usenavi + "]";
+	}
+	
+	
+	public int getTotalPrice() {
+		return totalPrice;
+	}
+
+
+	public void setTotalPrice(int totalPrice) {
+		this.totalPrice = totalPrice;
+	}
+
+
+
+
+	public String getEndDate() {
+		return endDate;
+	}
+
+
+	public void setEndDate(String endDate) {
+		this.endDate = endDate;
+	}
+
+
 	public String getName() {
 		return name;
 	}

@@ -19,7 +19,7 @@
           <a href="#"> 회원가입 </a>
         </div>
         <div class="lnb login-user">
-         <a href="${ctx}/userInfo.do"> [${ userId} ]님 </a>
+         <a href="${ctx}/userInfo.do"> [${userId} ]님 </a>
          <a class="logout-btn"> 로그아웃</a>
         </div>
       </div>
@@ -29,8 +29,8 @@
         </div>
         <div class="gnb">
           <a href="${ctx}/carList.do?kind=recent">차량 조회</a>
-          <a href="#">예약 하기</a>
-          <a href="#">예약 확인</a>
+          <a href="${ctx}/userReserveList.do"> 내 예약 확인  </a>
+          <a href="${ctx}/registerCar.do"> 차량 등록</a>
         </div>
       </nav>
       <div class="trigger">

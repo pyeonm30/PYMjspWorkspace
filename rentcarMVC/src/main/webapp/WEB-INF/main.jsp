@@ -17,3 +17,8 @@
     </main>
 <%@ include file="./parts/footer.jsp"%>
 
+<c:if test="${ !empty msg}"> 
+	<script>
+	  window.addEventListener('load',()=>{ actvieMsgModal('${msg}')});
+	</script>
+</c:if>

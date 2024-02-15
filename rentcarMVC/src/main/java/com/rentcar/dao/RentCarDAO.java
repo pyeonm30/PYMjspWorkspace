@@ -5,7 +5,9 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 
 import com.rentcar.util.MybatisConfig;
+import com.rentcar.vo.JoinCarView;
 import com.rentcar.vo.Rentcar;
+import com.rentcar.vo.Reservation;
 
 
 
@@ -42,5 +44,26 @@ public class RentCarDAO {
 		   session.close();
 		   return car;
 }
+    
+    public int insertRentcar(Rentcar vo) {
+		   SqlSession session= MybatisConfig.getInstance().openSession(true);
+		   int cnt = session.insert("mapper.rentcar.insertRentcar",vo);
+		   session.close();
+		   return cnt;
+}
+    
+    public int addTotalQty(Reservation vo) {
+		   SqlSession session= MybatisConfig.getInstance().openSession(true);
+		   int cnt = session.insert("mapper.rentcar.addTotalQty",vo);
+		   session.close();
+		   return cnt;
+}
+    public int reduceTotalQty(Reservation vo) {
+		   SqlSession session= MybatisConfig.getInstance().openSession(true);
+		   int cnt = session.insert("mapper.rentcar.reduceTotalQty",vo);
+		   session.close();
+		   return cnt;
+}
+	
 	
 }

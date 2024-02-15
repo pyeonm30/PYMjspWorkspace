@@ -2,9 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="../parts/header.jsp"%>
-<link rel="stylesheet" type="text/css" href="${ctx}/css/car.css">
-
-
+<link rel="stylesheet" type="text/css" href="${ctx}/css/carlist.css">
     <main>
       <div class="inner">
 
@@ -20,9 +18,9 @@
               <h2> ${title} 조회</h2>
           <div class="itemWrap">
             <c:forEach var="vo" items="${list}">
-              <div class="item" onclick="location.href='${ctx}/rentcarInfo.do?num=${vo.num}'">
+              <div class="item" onclick="checkQty('${vo.totalQty}','${ctx}','${vo.num}')">
                 <div class="imgBox">
-                  <img src="${ctx}/img/${vo.img}" alt="${vo.name}">
+                  <img src="upload/${vo.img}" alt="${vo.name}">
                 </div>
                 <div class="textBox">
                   <p class="textBox__name">${vo.name}&nbsp; ${vo.company}</p>
@@ -36,8 +34,16 @@
       </div>
 
     </main>
-
-
+    
+    <script>
+    function checkQty(qty , ctx ,num){
+    	if(qty > 0){
+    		location.href=ctx+'/rentcarInfo.do?num='+num;
+    	}else{
+    		alert('죄송합니다 이 차는 모두 렌트 중입니다');
+    	}
+    }
+    </script>
 
 
 <%@ include file="../parts/footer.jsp"%>

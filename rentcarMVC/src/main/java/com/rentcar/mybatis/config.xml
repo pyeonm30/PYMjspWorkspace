@@ -9,6 +9,7 @@
        <typeAlias type="com.rentcar.vo.Rentcar"  alias="rentcar" />   
      <typeAlias type="com.rentcar.vo.Board"  alias="board" />   
        <typeAlias type="com.rentcar.vo.Reservation"  alias="reservation" /> 
+        <typeAlias type="com.rentcar.vo.JoinCarView"  alias="joinCarView" /> 
   </typeAliases> 
   
   <environments default="development">

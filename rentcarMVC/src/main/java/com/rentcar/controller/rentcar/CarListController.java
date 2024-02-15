@@ -38,6 +38,7 @@ public class CarListController implements Controller {
 			list = (ArrayList<Rentcar>)RentCarDAO.getInstance().getCategoryCarlist(3);
 		}
 		
+		System.out.println("전체 차량 \n" + list);
 		request.setAttribute("list", list);
 		request.setAttribute("title", title);
 		return "rentcar/rentCarList";

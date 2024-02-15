@@ -1,10 +1,8 @@
-/* Fontawesome 4.7 */
-@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
-
 /* reset CSS */
 a {
   text-decoration: none;
   color: #222;
+  /* display: inline-block; */
 }
 
 h1,
@@ -37,6 +35,7 @@ select {
   font-family: 'Montserrat', sans-serif;
   outline: none;
 }
+
 
 img {
   width: 100%;
@@ -105,7 +104,8 @@ td {
 }
 
 
-table input {
+table input,
+table textarea {
   width: 80%;
   padding: 10px 0;
   text-align: center;
@@ -114,10 +114,19 @@ table input {
 table button {
   padding: 10px 30px;
   border-radius: 3px;
-  color: #fff;
+  color: white;
 
 }
 
+/* 버튼  */
+
+#delBtn {
+  background-color: crimson;
+}
+
+#updateBtn {
+  background-color: royalblue;
+}
 
 /* form  */
 
@@ -159,15 +168,26 @@ table input:focus {
   box-shadow: 0 0 5px crimson;
 }
 
-
-#delBtn {
+.mybtn {
+  color: #ddd;
   background-color: crimson;
+  font-size: 0.9em;
+  border-radius: 3px;
+  width: 80%;
+  padding: 20px 0;
 }
 
-#updateBtn {
-  background-color: royalblue;
+.left {
+  text-align: left;
 }
 
+.right {
+  text-align: right;
+}
+
+select {
+  padding: 5px 40px;
+}
 
 /* header */
 header {
@@ -244,8 +264,8 @@ nav {
 }
 
 .gnb a:hover {
- font-size: 1.5em;
-  background-color: lightpink;
+  background-color: rgba(240, 128, 128, 0.2);
+  font-size: 1.5em;
 }
 
 main {
@@ -257,7 +277,7 @@ main {
 
 main h2 {
   text-align: center;
-  margin: 10px 0;
+  margin: 10px 0 0 0;
 }
 
 main .member-content {
@@ -276,6 +296,7 @@ main .member-content {
   margin: auto;
   width: 600px;
   height: 400px;
+  margin-top: 15px;
 }
 
 .slide {
@@ -328,6 +349,47 @@ main .member-content {
   }
 }
 
+/* 차량 예약화면  */
+.reserve-table {
+  width: 100%;
+  margin: 20px 0;
+}
+
+.reserve-table img {
+  width: 100px;
+}
+
+.reserve-table td {
+  border-bottom: rgba(169, 169, 169, 0.404) 1px dashed;
+}
+
+.reserve-table td:nth-child(1) {
+  width: 20%;
+}
+
+.reserve-table td:nth-child(4) {
+  width: 5%;
+}
+
+.reserve-table td:nth-child(10) {
+  width: 5%;
+}
+
+.reserve-table td:nth-child(10) {
+  width: 5%;
+}
+
+.reserve-table td:nth-child(11) {
+  width: 5%;
+}
+
+.reserve-table td:nth-child(12) {
+  width: 5%;
+}
+
+.reserve-table button {
+  padding: 5px 10px;
+}
 
 footer {
   background-color: #000;
@@ -371,7 +433,12 @@ footer {
   position: relative;
   overflow: hidden;
   flex-direction: column;
+  padding: 20px;
+  margin: auto;
+}
 
+.car-modal .modal-content {
+  background-color: lightpink;
 }
 
 .modal-content div {
@@ -401,6 +468,22 @@ footer {
 
 }
 
+/* carmodal */
+.car-modal {
+  text-align: center;
+  top: 45%;
+}
+
+.car-modal .car-result {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.car-result table {
+  width: 80%;
+}
+
 .overlay {
   /* 모달창에 집중하기 위해서 나머지 부분은 검은색으로 배경 지정  */
   background-color: #00000096;
@@ -417,4 +500,69 @@ footer {
 .overlay.active {
   visibility: visible;
   opacity: 1;
+}
+
+/* 차량 등록 */
+
+.insert-car {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.insert-car .imgUpload {
+  border: 1px solid black;
+}
+
+.upload-table {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.upload-table input[type='radio'] {
+  width: 10%;
+}
+
+.upload-table td:nth-child(2) {
+  /* background-color: pink; */
+  width: 350px;
+}
+
+.img-td {
+  width: 400px;
+  overflow: hidden;
+}
+
+/* 차량 업로드 모달  */
+.upload-modal {
+  top: 20%;
+}
+
+.upload-modal .modal-content {
+  height: 100%;
+  /* border: 1px solid black; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  border: 3px solid palevioletred;
+}
+
+.upload-modal .modal-content .desc-header {
+  /* border: 1px solid black; */
+}
+
+.upload-modal .modal-content form {
+  /* border: 1px solid black; */
+  margin-bottom: 10px;
+  padding: 10px 10px 10px 70px;
+}
+
+.upload-btn {
+  width: 100%;
+  height: 40px;
+  background-color: crimson;
+  color: #fff;
+  border-radius: 5px;
 }

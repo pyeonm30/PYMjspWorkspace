@@ -22,7 +22,7 @@
 
 
   </div>
-  
+   <div class="overlay"></div>
   <%@ include file="./loginModal.jsp"%>
 <%@ include file="./msgModal.jsp"%>
 </body>

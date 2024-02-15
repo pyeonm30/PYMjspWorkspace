@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 
 import com.rentcar.util.MybatisConfig;
+import com.rentcar.vo.JoinCarView;
 import com.rentcar.vo.Rentcar;
 import com.rentcar.vo.Reservation;
 
@@ -38,6 +39,19 @@ public class ReservationDAO {
 		   int cnt = session.delete("mapper.reservation.reservationDelete",reserve_seq);
 		   session.close();
 		   return cnt;
+}
+    public List<JoinCarView> getJoinCarView(String id) {
+ 	   SqlSession session= MybatisConfig.getInstance().openSession(true);
+ 	   List<JoinCarView> list = session.selectList("mapper.reservation.getJoinCarView", id);
+		   session.close();
+		   return list;
+ }
+    
+    public Reservation getOneReservation(int reserveSeq) {
+		   SqlSession session= MybatisConfig.getInstance().openSession(true);
+		   Reservation book = session.selectOne("mapper.reservation.getOneReservation",reserveSeq);
+		   session.close();
+		   return book;
 }
 
     

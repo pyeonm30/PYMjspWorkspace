@@ -15,9 +15,28 @@
   <result property="usenavi" column="usenavi"/>
   <result property="useseat" column="useseat"/>
   </resultMap>
+  
+   <resultMap id="joinCarView" type="com.rentcar.vo.JoinCarView" >
+        <!-- Define mappings for JoinCarView properties -->
+        <result column="reserve_seq" property="regNo"/>	
+	   <result column="name" property="name"/>	
+	   <result column="price" property="price"/>	
+	   <result column="img" property="img"/>
+        <result property="qty" column="qty"/>
+        <result property="dday" column="dday"/>
+        <result property="rday" column="rday"/>
+        <result property="usein" column="usein"/>
+        <result property="usewifi" column="usewifi"/>
+        <result property="useseat" column="useseat"/>
+        <result property="usenavi" column="usenavi"/>
 
+    </resultMap>
+    
+    <select id="getOneReservation" parameterType="Integer" resultType="reservation">
+          select * from reservation where reserve_seq=#{reserveSeq}     
+    </select>
 
-<select id="getAllReserveList" resultMap="reservation">
+    <select id="getAllReserveList" resultMap="reservation">
 	 select * from reservation order by reserve_seq desc;
 	</select>
   
@@ -33,9 +52,15 @@
 	   INSERT INTO reservation(num,userid, qty, dday, rday, usein, usewifi, usenavi, useseat)
         VALUES (#{num},#{userid}, #{qty}, #{dday}, #{rday}, #{usein}, #{usewifi}, #{usenavi}, #{useseat})
 	   </insert>
+	   
+	   
 	   <delete id="reservationDelete" parameterType="Integer">  
         delete from reservation where reserve_seq = #{reserve_seq};
     </delete>
 
-	
+   <select id="getJoinCarView" parameterType="String" resultMap="joinCarView">
+select reserve_seq, a1.name,a1.price,a1.img,a2.qty,a2.dday,a2.rday,a2.usein,a2.usewifi,a2.useseat,a2.usenavi 
+from rentcar a1 , reservation a2  
+ where a2.userid = #{userid} and a1.num = a2.num;
+    </select>
 </mapper>
