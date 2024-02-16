@@ -42,11 +42,9 @@ img {
   height: 100%;
   object-fit: cover;
 }
-
-html {
-  scroll-behavior: smooth;
+html, body {
+    height: 100%
 }
-
 body {
   margin: 0;
   height: 100vh;
@@ -54,6 +52,8 @@ body {
   /* font-family: 'Noto Sans KR' , sans-serif; */
   line-height: 1.5em;
 }
+
+
 
 .container {
   height: 100%;
@@ -67,6 +67,10 @@ body {
   /* border: 1px solid blue; */
   width: 1300px;
   margin: auto;
+  
+  min-height: 100%;
+  position: relative;
+  padding-bottom: 60px;
 }
 
 /* table */
@@ -396,7 +400,9 @@ footer {
   padding: 30px;
   color: #ddd;
   /* flex: 1;*/
-  height: 100px;
+  height: 60px;
+   position: relative;
+   transform: translatY(-100%);
 }
 
 .footer-content {

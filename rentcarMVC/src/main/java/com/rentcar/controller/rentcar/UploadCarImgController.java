@@ -18,14 +18,6 @@ public class UploadCarImgController implements Controller {
 	public String requestHandler(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-// 파일 업로드 -> 서버 공간 저장 : 저장 폴더 지정 
-//가장 일반적인 사용방법으로 현재 서비스가 돌아가고 있는 서블릿의 경로를 가져온다.
-// 파일 구분자 : 윈도우는 \ , 리눅스와 맥은 / 로 말이다.
-
-		String UPLOAD_DIR = "img"; 
-		// String saveFolder = request.getServletContext().getRealPath("") +
-		// File.separator + UPLOAD_DIR;
-		//String savePath = "C:\\Users\\TJ\\git\\PYMjspWorkspace\\rentcarMVC\\src\\main\\webapp\\img";
          String savePath = request.getServletContext().getInitParameter("UPLOAD_DIR");
          System.out.println("savePath= " + savePath);
          

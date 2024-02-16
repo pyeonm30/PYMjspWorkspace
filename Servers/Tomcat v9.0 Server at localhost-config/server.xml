@@ -150,6 +150,7 @@
       <Host appBase="webapps" autoDeploy="true" name="localhost" unpackWARs="true">
 
   <Context docBase="C:\upload" path="/rentcarMVC/upload/" reloadable="true"/>
+  <Context docBase="C:\Users\TJ\git\PYMjspWorkspace\MemberMVC6\img" path="/member/img/" reloadable="true"/>
         <!-- SingleSignOn valve, share authentication between web applications
              Documentation at: /docs/config/valve.html -->
         <!--
@@ -163,6 +164,7 @@
 
       <Context docBase="rentcarMVC" path="/rentcarMVC" reloadable="true" source="org.eclipse.jst.jee.server:rentcarMVC"/></Host>
   
+
     
     </Engine>
   </Service>

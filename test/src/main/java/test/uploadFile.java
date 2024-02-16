@@ -2,7 +2,15 @@ package test;
 
 import java.io.File;
 import java.io.IOException;
-
+import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -27,17 +35,48 @@ public class uploadFile extends HttpServlet {
 	        if (!uploadDirectory.exists()) {
 	            uploadDirectory.mkdir();	
 	        }
-
+	        String fileName = "";
+	     
 	        System.out.println("uploadPath=" + uploadPath);
+	        MyFile file = null;
 	        for (Part part : request.getParts()) {
-	            String fileName = extractFileName(part);
-	            part.write(uploadPath + File.separator + fileName);
+	            fileName = extractFileName(part);
+	            if(!("".equals(fileName))) {
+	            	Path uploadedFilePath = Paths.get(uploadPath, fileName);
+	            	
+	            	file = new MyFile();
+	                if (Files.exists(uploadedFilePath)) {
+	                	
+	                	file.setOfileName(fileName);
+	                    String timestamp = new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date());
+	                    String[] fileNameParts = fileName.split("\\.");
+	                    fileName = fileNameParts[0] + "_" + timestamp + "." + fileNameParts[1];
+	                    uploadedFilePath = Paths.get(uploadPath, fileName);
+	                    System.out.println("test = " + uploadedFilePath.toString());
+	                   
+	                }else {
+	                	file.setOfileName(fileName);
+	                }
+	            	
+	                try (InputStream input = part.getInputStream()) {
+	                    Files.copy(input, uploadedFilePath, StandardCopyOption.REPLACE_EXISTING);
+
+	                    file.setSfileName(fileName);
+	                    file.setFileSize((int) Math.ceil(part.getSize() / 1024.0));
+
+	                    System.out.println("file = " + file);
+	                } catch (IOException e) {
+	                    System.out.println("Fail : " + e.getMessage());
+	                }
+	            }
 	        }
            
-	       // response.getWriter().print("Image(s) uploaded successfully!");
-	       // request.setAttribute("ctx", request.getContextPath());
+
+	        request.setAttribute("file", file);
 			RequestDispatcher rd=request.getRequestDispatcher("index.jsp"); 
 			rd.forward(request, response);
+			
+			
 			
 	    }
 
@@ -53,6 +92,10 @@ public class uploadFile extends HttpServlet {
 	            }
 	            
 	        }
+	        
+	        
+	        
+	        
 	        return "";
 	    }
 
