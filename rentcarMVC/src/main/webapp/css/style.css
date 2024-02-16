@@ -1,0 +1,568 @@
+/* reset CSS */
+a {
+  text-decoration: none;
+  color: #222;
+  /* display: inline-block; */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div {
+  margin: 0;
+  font-weight: normal;
+}
+
+button {
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font-family: 'Montserrat', sans-serif;
+  outline: none;
+}
+
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+  /* font-family: 'Noto Sans KR' , sans-serif; */
+  line-height: 1.5em;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: content-box;
+}
+
+/* common CSS */
+.inner {
+  /* border: 1px solid blue; */
+  width: 1300px;
+  margin: auto;
+}
+
+/* table */
+table {
+  font-size: 1em;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .25);
+  width: 30%;
+  /* border-collapse: collapse; */
+  border-radius: 5px;
+  overflow: hidden;
+  text-align: center;
+
+}
+
+th {
+  text-align: right;
+}
+
+thead {
+  font-weight: bold;
+  color: #fff;
+  background: #73685d;
+}
+
+td,
+th {
+  padding: 1em .5em;
+  vertical-align: middle;
+  /* border-bottom: solid 1px rgba(19, 1, 1, 0.171); */
+}
+
+td {
+  background: #fff;
+  text-align: center;
+}
+
+
+table input,
+table textarea {
+  width: 80%;
+  padding: 10px 0;
+  text-align: center;
+}
+
+table button {
+  padding: 10px 30px;
+  border-radius: 3px;
+  color: white;
+
+}
+
+/* 버튼  */
+
+#delBtn {
+  background-color: crimson;
+}
+
+#updateBtn {
+  background-color: royalblue;
+}
+
+/* form  */
+
+.row {
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.row .field {
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: space-around;
+  align-items: center;
+  width: 50%;
+}
+
+.row .field label {
+  margin: 5px 10px;
+}
+
+.row .field input,
+table input {
+  border: 1px solid #ddd;
+  padding: 7px;
+}
+
+.row .field input:hover,
+select :hover,
+table input:hover {
+  border: 1px solid crimson;
+  box-shadow: 0 0 5px crimson;
+}
+
+.row .field input:focus,
+table input:focus {
+  border: 1px solid crimson;
+  box-shadow: 0 0 5px crimson;
+}
+
+.mybtn {
+  color: #ddd;
+  background-color: crimson;
+  font-size: 0.9em;
+  border-radius: 3px;
+  width: 80%;
+  padding: 20px 0;
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+select {
+  padding: 5px 40px;
+}
+
+/* header */
+header {
+  /* border: 1px solid black; */
+  background-color: pink;
+  /* height: 200px; */
+  /* flex: 2; */
+}
+
+.banner {
+  /* border: 1px solid blue; */
+  background-color: black;
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.lnb {
+  width: 1300px;
+  margin: auto;
+  text-align: right;
+}
+
+.lnb a {
+  color: #ddd;
+  margin: 5px 30px;
+  font-weight: 600;
+}
+
+.lnb a:hover {
+  color: lightcoral;
+}
+
+.lnb a:last-child {
+  margin: 0;
+}
+
+.all-user {}
+
+.login-user {
+  display: none;
+}
+
+
+nav {
+  width: 1300px;
+  /* border: 1px solid red; */
+  /* background-color: lightgrey; */
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* justify-content: space-between; */
+}
+
+.logo {
+  width: 70px;
+  height: 70px;
+  flex: 1;
+}
+
+.gnb {
+  display: flex;
+  justify-content: center;
+  flex: 10;
+  height: 100%;
+}
+
+.gnb a {
+  padding: 10px 30px;
+  font-size: 1.2em;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.gnb a:hover {
+  background-color: rgba(240, 128, 128, 0.2);
+  font-size: 1.5em;
+}
+
+main {
+  /*border: 1px solid blue; */
+  flex: 1;
+  margin-top: 10px;
+
+}
+
+main h2 {
+  text-align: center;
+  margin: 10px 0 0 0;
+}
+
+main .member-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 슬라이더  */
+
+.slider {
+  margin-top: 10px;
+  position: relative;
+  overflow: hidden;
+  margin: auto;
+  width: 600px;
+  height: 400px;
+  margin-top: 15px;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+
+  animation: slider 7.5s infinite linear;
+}
+
+.slide:nth-child(1) {
+  /*  background-image: url(img1.jpg);*/
+  animation-delay: 0;
+}
+
+.slide:nth-child(2) {
+  /* background-image: url(img2.jpg);*/
+  animation-delay: -2.5s;
+}
+
+.slide:nth-child(3) {
+  /*  background-image: url(img3.jpg);*/
+  animation-delay: -5s;
+}
+
+@keyframes slider {
+  0% {
+    transform: translateX(0);
+  }
+
+  26% {
+    transform: translateX(0);
+  }
+
+  33% {
+    transform: translateX(-100%);
+    animation-timing-function: step-end;
+  }
+
+  93% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* 차량 예약화면  */
+.reserve-table {
+  width: 100%;
+  margin: 20px 0;
+}
+
+.reserve-table img {
+  width: 100px;
+}
+
+.reserve-table td {
+  border-bottom: rgba(169, 169, 169, 0.404) 1px dashed;
+}
+
+.reserve-table td:nth-child(1) {
+  width: 20%;
+}
+
+.reserve-table td:nth-child(4) {
+  width: 5%;
+}
+
+.reserve-table td:nth-child(10) {
+  width: 5%;
+}
+
+.reserve-table td:nth-child(10) {
+  width: 5%;
+}
+
+.reserve-table td:nth-child(11) {
+  width: 5%;
+}
+
+.reserve-table td:nth-child(12) {
+  width: 5%;
+}
+
+.reserve-table button {
+  padding: 5px 10px;
+}
+
+footer {
+  background-color: #000;
+  padding: 30px;
+  color: #ddd;
+  /* flex: 1;*/
+  height: 100px;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 모달 */
+.modal {
+  position: fixed;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.7);
+  z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s;
+}
+
+.modal.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+
+/* 팝업창의 디자인 담당  */
+.modal-content {
+  width: 600px;
+  background-color: #fff;
+  border-radius: 5px;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  flex-direction: column;
+  padding: 20px;
+  margin: auto;
+}
+
+.car-modal .modal-content {
+  background-color: lightpink;
+}
+
+.modal-content div {
+  padding: 10px;
+}
+
+.btn-close {
+  position: absolute;
+  top: 0px;
+  right: 5px;
+  font-size: 25px;
+  background-color: transparent;
+  color: #222;
+}
+
+.btn-close:hover {
+  color: crimson;
+}
+
+
+.btn-send {
+  display: block;
+  width: 100%;
+  background-color: crimson;
+  color: #fff;
+  padding: 10px;
+
+}
+
+/* carmodal */
+.car-modal {
+  text-align: center;
+  top: 45%;
+}
+
+.car-modal .car-result {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.car-result table {
+  width: 80%;
+}
+
+.overlay {
+  /* 모달창에 집중하기 위해서 나머지 부분은 검은색으로 배경 지정  */
+  background-color: #00000096;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  transition: 0.5s;
+  opacity: 0;
+}
+
+.overlay.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* 차량 등록 */
+
+.insert-car {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.insert-car .imgUpload {
+  border: 1px solid black;
+}
+
+.upload-table {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.upload-table input[type='radio'] {
+  width: 10%;
+}
+
+.upload-table td:nth-child(2) {
+  /* background-color: pink; */
+  width: 350px;
+}
+
+.img-td {
+  width: 400px;
+  overflow: hidden;
+}
+
+/* 차량 업로드 모달  */
+.upload-modal {
+  top: 20%;
+}
+
+.upload-modal .modal-content {
+  height: 100%;
+  /* border: 1px solid black; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  border: 3px solid palevioletred;
+}
+
+.upload-modal .modal-content .desc-header {
+  /* border: 1px solid black; */
+}
+
+.upload-modal .modal-content form {
+  /* border: 1px solid black; */
+  margin-bottom: 10px;
+  padding: 10px 10px 10px 70px;
+}
+
+.upload-btn {
+  width: 100%;
+  height: 40px;
+  background-color: crimson;
+  color: #fff;
+  border-radius: 5px;
+}

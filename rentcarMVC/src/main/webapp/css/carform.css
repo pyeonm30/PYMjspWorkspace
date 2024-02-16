@@ -1,0 +1,55 @@
+@charset "UTF-8";
+/* 차량 관련 테이블  */
+#car-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border: 1px solid black; */
+}
+
+
+#car-form p {
+  text-align: center;
+}
+
+.car-desc {
+  width: 50%;
+}
+
+.car-table {
+  font-size: 1em;
+  /* flex: 2; */
+  padding: 0 20px;
+}
+
+.car-table input,
+.car-table select {
+  width: 90%;
+  padding: 10px 2px;
+}
+
+.car-table .colname {
+  width: 150px;
+}
+
+.car-photo {
+  overflow: hidden;
+  width: 90%;
+  margin: auto;
+  margin-top: 40px
+}
+
+
+.next-btn span {
+  display: inline-block;
+  font-size: 1.2em;
+  transition: 0.3s;
+}
+
+.next-btn:hover {
+  background-color: black;
+}
+
+.next-btn:hover span {
+  transform: translateX(15px);
+}
