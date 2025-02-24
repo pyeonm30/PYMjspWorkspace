@@ -6,9 +6,16 @@
 
 String[] member = (String[])request.getAttribute("member");
 System.out.println(request.getAttribute("member"));
-String name =member[0]; //request.getParameter("name");
-String id =member[1]; //request.getParameter("id");
-String pw =member[2]; //request.getParameter("pw");
+String name =null; //request.getParameter("name");
+String id =null; //request.getParameter("id");
+String pw =null; //request.getParameter("pw");
+
+if(member != null){
+	name =member[0];
+	id =member[1];
+	pw =member[2];
+}
+
 %>
 <!DOCTYPE html>
 <html>
