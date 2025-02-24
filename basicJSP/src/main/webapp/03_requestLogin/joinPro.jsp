@@ -17,8 +17,8 @@
  request.setAttribute("member", member);
  
 
- //RequestDispatcher dis = request.getRequestDispatcher("login.jsp");
- //dis.forward(request, response);
+ RequestDispatcher dis = request.getRequestDispatcher("login.jsp");
+ dis.forward(request, response);
  
 %>
 <h1> <%=name %></h1>

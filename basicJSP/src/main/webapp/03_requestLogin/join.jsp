@@ -10,9 +10,9 @@
 <h1> 회원가입 </h1>
 <form method="post" action="joinPro.jsp">
 
- Name : <input type="text" name="name" /> <br><br>
- I  D : <input type="text" name="id" /> <br><br>
- P  W : <input type="text" name="pw" /> <br><br>
+ Name : <input type="text" name="name" required /> <br><br>
+ I  D : <input type="text" name="id" required/> <br><br>
+ P  W : <input type="text" name="pw" required/> <br><br>
 <input type="submit" value="회원가입" />
 </form>
 <br>
